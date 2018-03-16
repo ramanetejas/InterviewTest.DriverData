@@ -8,8 +8,12 @@ namespace InterviewTest.Commands
 {
 	public class AnalyseHistoryCommand
 	{
-		// BONUS: What's great about readonly?
-		private readonly IAnalyser _analyser;
+        // BONUS: What's great about readonly?
+        /*
+         * A readonly field can be initialized only once as it is immutable.
+         * In our case, an Analyser is readonly as it will be instantiated only once as the analysis would be done for one driver at a time         
+        */
+        private readonly IAnalyser _analyser;
 
 		public AnalyseHistoryCommand(IReadOnlyCollection<string> arguments)
 		{
